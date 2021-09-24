@@ -16,6 +16,7 @@ require "action_cable/engine"
 require "rails/test_unit/railtie"
 
 require_relative '../lib/middleware/measure_logs'
+require_relative '../lib/middleware/log_request_id'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -39,7 +40,7 @@ module RailsMiddleware
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-
     config.middleware.use ::Middleware::MeasureLogs
+    config.middleware.use ::Middleware::LogRequestId
   end
 end
