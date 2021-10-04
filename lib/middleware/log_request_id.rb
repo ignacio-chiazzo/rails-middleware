@@ -1,5 +1,4 @@
 require 'securerandom'
-require 'pry'
 
 module Middleware
   class LogRequestId
